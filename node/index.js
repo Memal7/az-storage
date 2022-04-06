@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const config = {
   host: process.env.AZ_POSTGRESQL_HOST,
+  host: process.env.AZ_POSTGRESQL_SERVER_NAME + ".postgres.database.azure.com",
   user: process.env.AZ_POSTGRESQL_USERNAME,
   password: process.env.AZ_POSTGRESQL_PASSWORD,
   database: process.env.AZ_DATABASE_NAME,
