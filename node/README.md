@@ -1,6 +1,16 @@
 # Azure PostgreSQL to Azure Blob Storage Migration
 
-Basic example of how to migrate images or videos from Azure PostgreSQL to Azure Blob Storage account with Node.js.
+Basic example of how to migrate images and videos from Azure PostgreSQL to Azure Blob Storage account with Node.js.
+
+## Setup
+
+```bash
+AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
+AZ_POSTGRESQL_HOST=<YOUR_POSTGRESQL_HOST>
+AZ_POSTGRESQL_USERNAME=<YOUR_POSTGRESQL_USERNAME>
+AZ_POSTGRESQL_PASSWORD=<YOUR_POSTGRESQL_PASSWORD>
+AZ_STORAGE_CONNECTION_STRING=<YOUR_BLOB_STORAGE_CONNECTION_STRING>
+```
 
 ## Additional Resources
 
