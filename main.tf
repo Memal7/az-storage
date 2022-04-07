@@ -29,31 +29,22 @@ resource "azurerm_storage_account" "storage-account" {
   account_replication_type = "GRS"
 }
 
-# Create a Container for blobs
+# Create a Container
 resource "azurerm_storage_container" "blob-container" {
   name                  = "mycontainer"
   storage_account_name  = azurerm_storage_account.storage-account.name
   container_access_type = "private"
 }
 
-# Create a blob
-resource "azurerm_storage_blob" "blob" {
-  name                   = "myblob.zip"
-  storage_account_name   = azurerm_storage_account.storage-account.name
-  storage_container_name = azurerm_storage_container.blob-container.name
-  type                   = "Block"
-  source                 = "some-local-file.zip"
-}
-
 # Configure policies for the blob lifecycle management
 resource "azurerm_storage_management_policy" "storage-policy" {
-  storage_account_id = azurerm_storage_account.storage-account
+  storage_account_id = azurerm_storage_account.storage-account.id
 
   rule {
     name    = "rule1"
     enabled = true
     filters {
-      prefix_match = ["myfiles"]
+      prefix_match = ["mycontainer"]
       blob_types   = ["blockBlob"]
       match_blob_index_tag {
         name      = "tag1"
@@ -69,31 +60,6 @@ resource "azurerm_storage_management_policy" "storage-policy" {
       }
       snapshot {
         delete_after_days_since_creation_greater_than = 30
-      }
-    }
-  }
-  rule {
-    name    = "rule2"
-    enabled = false
-    filters {
-      prefix_match = ["mycontainer", "mycontainer2/test.txt"]
-      blob_types   = ["blockBlob"]
-    }
-    actions {
-      base_blob {
-        tier_to_cool_after_days_since_modification_greater_than    = 11
-        tier_to_archive_after_days_since_modification_greater_than = 51
-        delete_after_days_since_modification_greater_than          = 101
-      }
-      snapshot {
-        change_tier_to_archive_after_days_since_creation = 90
-        change_tier_to_cool_after_days_since_creation    = 23
-        delete_after_days_since_creation_greater_than    = 31
-      }
-      version {
-        change_tier_to_archive_after_days_since_creation = 9
-        change_tier_to_cool_after_days_since_creation    = 90
-        delete_after_days_since_creation                 = 3
       }
     }
   }
