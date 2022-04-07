@@ -29,7 +29,7 @@ resource "azurerm_storage_account" "storage-account" {
   account_replication_type = "GRS"
 }
 
-# Create a Container for blobs
+# Create a Container
 resource "azurerm_storage_container" "blob-container" {
   name                  = "mycontainer"
   storage_account_name  = azurerm_storage_account.storage-account.name
