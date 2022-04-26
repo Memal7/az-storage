@@ -27,7 +27,7 @@ Replace the placeholders with the following values:
 - `<YOUR_POSTGRESQL_SERVER_NAME>`: The server name of your PostgreSQL database server.
 - `<YOUR_POSTGRESQL_USERNAME>`: The username of your PostgreSQL database server.
 - `<YOUR_POSTGRESQL_PASSWORD>`: The password of your PostgreSQL database server. That password should have a minimum of eight characters. The characters should be from three of the following categories: English uppercase letters, English lowercase letters, numbers (0-9), and non-alphanumeric characters (!, $, #, %, and so on).
-- `<AZ_STORAGE_CONNECTION_STRING>`: The storage connection string for your blob storage.
+- `<YOUR_BLOB_STORAGE_CONNECTION_STRING>`: The storage connection string for your blob storage.
 
 ## Install Node.js dependencies
 
