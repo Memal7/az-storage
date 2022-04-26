@@ -33,15 +33,14 @@ Navigate to the directory containing the pom.xml file and compile the project by
 
 Build the package:
 
-```
+```bash
 mvn package
 ```
 
 Run the following mvn command to execute the app.
 
-```
+```bash
 mvn exec:java -Dexec.mainClass="com.blobs.quickstart.App" -Dexec.cleanupDaemonThreads=false
-
 ```
 
 ## Additional Documentation
