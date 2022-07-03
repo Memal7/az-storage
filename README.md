@@ -1,6 +1,6 @@
-# Blob storage
+# Blob Storage
 
-## What's blob storage?
+## What's Blob Storage?
 Azure blobe storage is the object storage solution of Microsoft Azure, which optimized for storing unstructured data. Users or client applications can access objects in blob storage via HTTP/HTTPS, from anywhere in the world. The Objects are accessible via the Azure Storage REST API, Azure PowerShell, Azure CLI, or an Azure Storage client library (.NET, Java, Python, Node.js, etc.).
 
 Blob storage is designed for:
@@ -23,7 +23,7 @@ Blob storage is designed for:
 
 ---
 
-## Blob storage access tiers
+## Blob Storage access tiers
 - **Hot:**
   - Optimized for frequent access data
   - Highest storage costs, but the lowest access costs
@@ -39,7 +39,7 @@ Blob storage is designed for:
 
 ---
 
-## Blob storage resources
+## Blob Storage resources
 - **Storage Account:** Top level of all storage services. Storage  name e.g. _mystorageaccount007_ (must be globally unique!)
 - **Container:** Similar to a directory on file system. A Storage Account have unlimited containers and a container can have unlimited blobs.
 - **Blob:** Single file e.g. text, video, etc.
