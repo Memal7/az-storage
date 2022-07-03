@@ -21,7 +21,6 @@ Blob storage is designed for:
 | Premium page blobs          | Page blobs only                                         |
 | Premium file shares         | Azure Files                                             |
 
-
 ---
 
 ## Blob storage access tiers
