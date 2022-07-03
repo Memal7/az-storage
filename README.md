@@ -55,6 +55,6 @@ With Policies for blobs you can configure rules to transit the blobs from one ac
 ---
 
 ## Demos
-Look at to the [Bicep](Bicep/) and [Terraform](Terraform/) directories.
+Look at to the [Bicep](01_stoarge-bicep/) and [Terraform](02_storage-terraform/) directories.
 
 
