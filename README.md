@@ -45,8 +45,8 @@ Blob storage is designed for:
 - **Container:** Similar to a directory on file system. A Storage Account have unlimited containers and a container can have unlimited blobs.
 - **Blob:** Single file e.g. text, video, etc.
 
-![Blob storage resources](../00_images/blob-resources.png)
-![Create new container](../00_images/blob-container.png)
+![Blob storage resources](../images/blob-resources.png)
+![Create new container](../images/blob-container.png)
 
 **Note:** Public access level specifies whether data in the container may be accessed publicly. By default, container data is private to the account owner.
 
