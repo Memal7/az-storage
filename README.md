@@ -46,8 +46,6 @@ Blob storage is designed for:
 
 ![Blob storage resources](00_images/blob-resources.png)
 
-**Note:** Public access level specifies whether data in the container may be accessed publicly. By default, container data is private to the account owner.
-
 ---
 
 ## Blob life cycle management
