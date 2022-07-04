@@ -1,7 +1,7 @@
-# Blob Storage
+# Azure Blob Storage
 
 ## What's Blob Storage?
-Azure blobe storage is the object storage solution of Microsoft Azure, which optimized for storing unstructured data. Users or client applications can access objects in blob storage via HTTP/HTTPS, from anywhere in the world. The Objects are accessible via the Azure Storage REST API, Azure PowerShell, Azure CLI, or an Azure Storage client library (.NET, Java, Python, Node.js, etc.).
+Azure Blob storage is the object storage solution of Microsoft Azure, which is optimized for storing unstructured data. Users or clients (e.g. apps) can access objects in Blob storage via HTTP/HTTPS, from anywhere in the world. The Objects are accessible via the Azure Storage REST API, Azure PowerShell, Azure CLI, or an Azure Storage client library (.NET, Java, Python, Node.js, etc.).
 
 Blob storage is designed for:
 - Images or documents to a browser
@@ -13,17 +13,19 @@ Blob storage is designed for:
 
 ---
 
-## Storage Account types
-|    Account types            |      Supported storage services                         |
-|           :---              |     :---                                                |
-| Standard general purpose v2 | Blob (incl. Data Lake Gen2), Queue, Table, Disks, Files |
-| Premium block blobs         | Blobs only                                              |
-| Premium page blobs          | Page blobs only                                         |
-| Premium file shares         | Azure Files                                             |
+## Storage account and Blob types
+|    Storage account types    |      Supported storage services                         	      |    Usage                                                                                                                                 |
+|           :---              |     :---                                                        |   :---                                                                                                                                   |
+| Standard general-purpose v2 | Blob (incl. Data Lake Gen2), Queue, Table, Disks, Files         | Optimized for most scenarios                                                                                                             |
+| Premium block blobs         | Blobs only (e.g. text, binaries, videos, audios, etc.)          | Optimized for app that requires high transaction rates, I/O operations. This type used SSD storage                                       |
+| Premium page blobs          | Page blobs only (e.g. random access files, VHDs as diks for VMs)| Optimized for frequently read/write operations and ideal for storing index-based and sparse data structures like OS & data disks for VMs |
+| Premium append blobs        | Append blobs only (e.g. logging data for VMs)                   | Optimized for frequently read/write operations and ideal for storing index-based and sparse data structures like OS & data disks for VMs |
+| Premium file shares         | Azure Files                                                     | Optimized for enterprise high-performance apps. This types used SSD as well and supports both SMB and NFS file shares                    |
+
 
 ---
 
-## Blob Storage access tiers
+## Blob storage access tiers
 - **Hot:**
   - Optimized for frequent access data
   - Highest storage costs, but the lowest access costs
@@ -39,9 +41,9 @@ Blob storage is designed for:
 
 ---
 
-## Blob Storage resources
-- **Storage Account:** Top level of all storage services. Storage  name e.g. _mystorageaccount007_ (must be globally unique!)
-- **Container:** Similar to a directory on file system. A Storage Account have unlimited containers and a container can have unlimited blobs.
+## Blob storage resources
+- **Storage account:** Top level of all storage services. Storage  name e.g. _mystorageaccount007_ (must be globally unique!)
+- **Container:** Similar to a directory on file system. A Storage account have unlimited containers and a container can have unlimited blobs.
 - **Blob:** Single file e.g. text, video, etc.
 
 ![Blob storage resources](00_images/blob-resources.png)
@@ -49,7 +51,7 @@ Blob storage is designed for:
 ---
 
 ## Blob life cycle management
-Blob storage offers policies for diffrent scenarios and it's available for general-purpose v2 and all blob storage types.
+Blob storage offers policies for diffrent scenarios and it's available for general-purpose v2 and all Blob storage types.
 With Policies for blobs you can configure rules to transit the blobs from one access tier to another one (e.g. hot --> cool) to optimize performance and costs or delete blobs after specefic days.
 
 ---
